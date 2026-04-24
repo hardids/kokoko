@@ -45,7 +45,7 @@
         .nav-cta:hover { background: var(--gold); }
 
         /* Main Content */
-        main { padding-top: 60px; } 
+        main { padding-top: 60px; } /* nav 높이만큼 여백 */
 
         .img-section {
             width: 100%;
@@ -55,11 +55,13 @@
             overflow: hidden;
         }
 
+        /* 이미지 반응형 처리 */
         .img-section img {
             width: 100%;
-            max-width: 1200px; 
+            max-width: 1200px; /* 데스크탑에서 너무 커지지 않게 제한 */
             height: auto;
             display: block;
+            /* 부드러운 등장 효과 */
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.8s ease-out;
@@ -70,10 +72,10 @@
             transform: translateY(0);
         }
 
-        /* 배경색 교차 배치 */
+        /* 배경색 교차 배치 (지루함 방지) */
         .img-section:nth-child(even) { background-color: var(--cream); }
 
-        /* 하단 고정 문의 바 */
+        /* 하단 고정 문의 바 (모바일 대응) */
         .mobile-contact-bar {
             position: fixed; bottom: 0; left: 0; right: 0;
             display: grid; grid-template-columns: 1fr 1fr;
@@ -107,21 +109,13 @@
 </nav>
 
 <main>
-    <section class="img-section"><img src="1.jpg" alt="이미지 01"></section>
-    <section class="img-section"><img src="2.jpg" alt="이미지 02"></section>
-    <section class="img-section"><img src="3.jpg" alt="이미지 03"></section>
-    <section class="img-section"><img src="4.jpg" alt="이미지 04"></section>
-    <section class="img-section"><img src="5.jpg" alt="이미지 05"></section>
-    <section class="img-section"><img src="6.jpg" alt="이미지 06"></section>
-    <section class="img-section"><img src="7.jpg" alt="이미지 07"></section>
-    <section class="img-section"><img src="8.jpg" alt="이미지 08"></section>
-    <section class="img-section"><img src="9.jpg" alt="이미지 09"></section>
-    <section class="img-section"><img src="10.jpg" alt="이미지 10"></section>
-    <section class="img-section"><img src="11.jpg" alt="이미지 11"></section>
-    <section class="img-section"><img src="12.jpg" alt="이미지 12"></section>
-    <section class="img-section"><img src="13.jpg" alt="이미지 13"></section>
-    <section class="img-section"><img src="14.jpg" alt="이미지 14"></section>
-    <section class="img-section" style="padding-bottom: 50px;"><img src="15.jpg" alt="이미지 15"></section>
+    <section class="img-section"><img src="1.jpg" alt="01 리움 다시 움트다"></section>
+    <section class="img-section"><img src="2.jpg" alt="02 브랜드 아이덴티티1"></section>
+    <section class="img-section"><img src="3.jpg" alt="02 브랜드 아이덴티티2"></section>
+    <section class="img-section"><img src="4.jpg" alt="03 특별한 강점"></section>
+    <section class="img-section"><img src="5.jpg" alt="인프라 지원"></section>
+    <section class="img-section"><img src="6.jpg" alt="04 지원 시스템"></section>
+    <section class="img-section" style="padding-bottom: 50px;"><img src="7.jpg" alt="05 파트너십 문의"></section>
 </main>
 
 <footer>
@@ -135,7 +129,7 @@
 </div>
 
 <script>
-    // 스크롤 시 이미지가 나타나는 효과 적용
+    // 스크롤 시 이미지가 스르륵 나타나는 효과
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
